@@ -10,14 +10,14 @@ public class Reservations {
     }
 
     public int getPrice() {
-       if(roomType.equals("king")){
+       if(roomType.equalsIgnoreCase("king")){
            return 139;
        }
-       else if (roomType.equals("double")){
+       else if (roomType.equalsIgnoreCase("double")){
            return 124;
        }
        else {
-           throw new RuntimeException("invald room type");
+           throw new RuntimeException("invalid room type");
        }
     }
 
@@ -39,4 +39,8 @@ public class Reservations {
 
     int NumOfNights;
     boolean isWeekend;
+
+    public double getReservationTotal() {
+        return getPrice() * getNumOfNights();
+    }
 }

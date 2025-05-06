@@ -5,6 +5,7 @@ public class Room {
     boolean occupied;
     boolean dirty;
 
+
     public boolean isDirty() {
         return dirty;
     }
@@ -26,6 +27,24 @@ public class Room {
             return true;
         } else {
             return false;
+        }
+    }
+
+    public void checkIn() {
+        if (isAvailble()) {
+            occupied = true;
+            dirty = true;
+            System.out.println();
+        } else {
+            System.out.println("Room is not available.");
+        }
+        public void checkOut(){
+            if (occupied) {
+                occupied = false;
+                System.out.println("Guest checked out.");
+            } else {
+                System.out.println("Room was not used.");
+            }
         }
     }
 }
