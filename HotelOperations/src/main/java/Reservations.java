@@ -1,6 +1,5 @@
 public class Reservations {
     String roomType;
-    int price;
 
     public String getRoomType() {
         return roomType;
@@ -11,11 +10,15 @@ public class Reservations {
     }
 
     public int getPrice() {
-        return price;
-    }
-
-    public void setPrice(int price) {
-        this.price = price;
+       if(roomType.equals("king")){
+           return 139;
+       }
+       else if (roomType.equals("double")){
+           return 124;
+       }
+       else {
+           throw new RuntimeException("invald room type");
+       }
     }
 
     public int getNumOfNights() {
