@@ -1,4 +1,3 @@
-import java.time.LocalDateTime;
 
 public class Employee {
 
@@ -19,7 +18,6 @@ public class Employee {
     }
 
     public double getTotalPay() {
-        ;
         return getRegularHours() * payRate + getOvertimeHours() * payRate;
     }
 
