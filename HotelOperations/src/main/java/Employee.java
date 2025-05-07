@@ -31,20 +31,24 @@ public class Employee {
         return Math.max(hoursWorked - 40,0);
     }
 
-    public void PunchIn(double time) {
+    public void punchIn(double time) {
 
         if (startTime != -1) {
             System.out.println(name + " already punched in");
             return;
         }
-        startTime = LocalDateTime.now();
         System.out.println("Punch In time at " + startTime);
 
     }
-    void pumchOut(double time) {
-        if (startTime == -1)
-        double todaysHours = time - this.startTime;
-        this.hoursWorked = this.hoursWorked + todaysHours;
+    void punchOut(double time) {
+        if (startTime == -1){
+            System.out.println("Error: Employee has not punched in.");
+        return;
+    }
+        double hoursWorkedNow = time - startTime;
+        hoursWorked += hoursWorkedNow;
+        startTime = 0; // Reset punch-in time
+        System.out.println(name + " punched out at " + time + " (Worked " + hoursWorkedNow + " hours)");
     }
 }
 
