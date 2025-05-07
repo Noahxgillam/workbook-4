@@ -38,15 +38,27 @@ public class Room {
         } else {
             System.out.println("Room is not available.");
         }
-        public void checkOut(){
-            if (occupied) {
-                occupied = false;
-                System.out.println("Guest checked out.");
-            } else {
-                System.out.println("Room was not used.");
-            }
+    }
+
+    public void checkOut() {
+        if (occupied) {
+            occupied = false;
+            System.out.println("Guest checked out.");
+        } else {
+            System.out.println("Room was not used.");
+        }
+    }
+
+    public void cleanRoom() {
+        if (!occupied) {
+            dirty = false;
+            System.out.println("Room has been cleaned.");
+        } else {
+            System.out.println("Cannot clean an occupied room.");
         }
     }
 }
+
+
 
 
